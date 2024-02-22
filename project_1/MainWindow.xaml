@@ -1,0 +1,74 @@
+﻿<Window x:Class="project_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="810" FontSize="20" FontFamily="Times New Roman">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="2" Grid.RowSpan="6" Background="Blue" Grid.ColumnSpan="3"/>
+        
+        <TextBlock Text='Russian State University of Oil and Gas "Gubkin University"' Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2"
+                   FontSize="27" FontWeight="Medium" Foreground="#4287f5" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Margin="20"/>
+        
+        <Image Source="images/gubkin.png" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5"/>
+        <Image x:Name="image" Source="images/none.jpg" Grid.RowSpan="5" Grid.Row="1" Margin="10" MouseDown="image_MouseDown"/>
+
+        <TextBlock Grid.Row="2"  Grid.Column="1" Grid.ColumnSpan="2" Foreground="White" Text="ПРОПУСК" FontSize="37" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBox x:Name="textBoxPassNumber" Text="Y-0200-0000XXXXXX"  Width="260"  Grid.Row="2" Grid.Column="2" FontSize="26" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
+
+        <TextBox x:Name="textBoxFirstName"   Grid.Row="3" Grid.Column="1"  Text="Ivanov" Width="250" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
+        <GroupBox Grid.Row="3" Grid.Column="2" Header="Sex" Foreground="White" Margin="2">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="radioButtonMale" Content="male" Margin="5" Foreground="White"/>
+                <RadioButton x:Name="radioButtonFemale" Content="female" Margin="5" Foreground="White"/>
+                <RadioButton x:Name="radioButtonOther" Content="other" Margin="5" Foreground="White"/>
+            </StackPanel>
+        </GroupBox>
+
+        <TextBox x:Name="textBoxLastName"   Grid.Row="4" Grid.Column="1"  Text="Ivan" Width="250" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
+
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Text="GROUP" Foreground="White" Margin="20 22"/>
+            <TextBox x:Name="textBoxGroup"   Text="RB-17-01" FontSize="26" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" Width="110"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
+            <TextBlock Text="University course" Foreground="White"  Margin="10 20"/>
+            <ComboBox x:Name="comboBoxCourse" Width="85" Margin="2 15"/>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal">
+            <TextBlock HorizontalAlignment="Left" Text="Date of issue" Foreground="White" Margin="10 22"/>
+            <DatePicker x:Name="datePickerDoi" Margin="0 18"/>
+        </StackPanel>
+
+        <CheckBox x:Name="checkBoxScholarship" Grid.Row="6" Content="SCHOLARSHIP" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Text="Age" Margin="10 20" Foreground="White"/>
+            <Slider x:Name="sliderAge" Width="180" VerticalAlignment="Center" Minimum="18" Maximum="35" Value="18" SmallChange="1" AutoToolTipPlacement="TopLeft"/>
+        </StackPanel>
+
+        <Button Grid.Row="7" Margin="30 10" Content="Save" Click="ButtonSave_Click" />
+        <Button Grid.Row="7" Grid.Column="1" Margin="30 10" Content="Load" Click="ButtonLoad_Click" />
+        <Button Grid.Row="7" Grid.Column="2" Margin="30 10" Content="Clear" Click="ButtonCLear_Click" />
+
+
+    </Grid>
+</Window>
